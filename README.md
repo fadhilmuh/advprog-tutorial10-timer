@@ -26,9 +26,9 @@ Karena task-task tersebut asynchronous, mereka berjalan konkuren satu sama lain 
 Sebagai hasilnya, output menunjukkan "2206083464's beloved device: howdy!" dicetak tiga kali secara cepat berturut-turut, diikuti oleh "2206083464's beloved device: done!" yang dicetak tiga kali setelah setiap task menyelesaikan waktu tunggu dua detiknya. Pesan "2206083464's beloved device: hey hey" dicetak pertama karena dieksekusi dalam fungsi utama sebelum task asynchronous apa pun di-spawn.
 
 Dengan drop:
-![Experiment 1.3 with drop](assets\Experiment-1.3-with-drop.png)
+![Experiment 1.3 with drop](assets/Experiment-1.3-with-drop.png)
 
 Tanpa drop:
-![Experiment 1.3 without drop](assets\Experiment-1.3-without-drop.png)
+![Experiment 1.3 without drop](assets/Experiment-1.3-without-drop.png)
 
 Ketika kita tidak menambahkan `drop(spawner)`, program tidak akan menunggu tugas-tugas selesai sebelum keluar. Hal ini karena spawner dan tugas-tugas tidak dibersihkan dengan benar ketika mereka tidak lagi diperlukan. Dengan menambahkan baris drop(spawner), kita memastikan bahwa spawner dan tugas-tugas dibersihkan dengan benar ketika mereka tidak lagi diperlukan, yang memungkinkan program untuk menunggu tugas-tugas selesai sebelum keluar.
